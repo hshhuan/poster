@@ -14,6 +14,9 @@ import javax.servlet.http.HttpServletRequest;
 import java.nio.charset.Charset;
 import java.util.Base64;
 
+/**
+ * @author huangshihuan
+ */
 @RestController
 public class SimpleController {
 

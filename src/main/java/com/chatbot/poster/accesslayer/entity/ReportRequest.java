@@ -1,9 +1,12 @@
-package com.chatbot.poster.dao;
+package com.chatbot.poster.accesslayer.entity;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlText;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+/**
+ * @author huangshihuan
+ */
 @Data
 @AllArgsConstructor
 public class ReportRequest {

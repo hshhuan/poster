@@ -1,5 +1,6 @@
 package com.chatbot.poster.dao;
 
+import com.chatbot.poster.accesslayer.entity.ReportRequest;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlCData;
