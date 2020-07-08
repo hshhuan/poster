@@ -11,5 +11,5 @@ import lombok.Data;
 @AllArgsConstructor
 public class ReportRequest {
     @JacksonXmlText
-    private String reportRequest;
+    private String status;
 }

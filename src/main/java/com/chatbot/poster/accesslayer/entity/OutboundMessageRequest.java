@@ -3,6 +3,7 @@ package com.chatbot.poster.accesslayer.entity;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlText;
 import lombok.Data;
@@ -20,20 +21,20 @@ import java.util.List;
 @JacksonXmlRootElement(localName = "outboundMessageRequest")
 public class OutboundMessageRequest {
 
+    @JacksonXmlProperty(localName = "address")
     private String address;
 
     @JacksonXmlElementWrapper(useWrapping = false)
     private List<String> destinationAddress;
 
+    @JacksonXmlProperty(localName = "senderAddress")
     private String senderAddress;
 
-
-
+    @JacksonXmlProperty(localName = "clientCorrelator")
     private String clientCorrelator;
 
+    @JacksonXmlProperty(localName = "outboundIMMessage")
     private OutboundIMMessge outboundIMMessage;
-
-
 
 
     public static void main(String [] args) {
@@ -42,12 +43,16 @@ public class OutboundMessageRequest {
 
         ObjectMapper mapper = new XmlMapper();
 
+        ReportRequest reportRequest = new ReportRequest("123");
+
         try {
             OutboundMessageRequest omr = mapper.readValue(xml, OutboundMessageRequest.class);
 
             System.out.println(omr);
 
             System.out.println(mapper.writeValueAsString(omr));
+
+            System.out.println(mapper.writeValueAsString(reportRequest));
 
         }catch (Exception e) {
             e.printStackTrace();
